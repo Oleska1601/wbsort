@@ -1,4 +1,4 @@
-module wbsort
+module github.com/Oleska1601/wbsort
 
 go 1.22.0
 

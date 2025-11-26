@@ -2,10 +2,12 @@ package app
 
 import (
 	"fmt"
-	"wbsort/internal/parser"
-	"wbsort/internal/sorter"
+
+	"github.com/Oleska1601/wbsort/internal/parser"
+	"github.com/Oleska1601/wbsort/internal/sorter"
 )
 
+// Run starts the sorting application with command line arguments
 func Run(flags *parser.Flags, lines []string) {
 	sorter := sorter.New(flags, lines)
 	rows := sorter.Sort()

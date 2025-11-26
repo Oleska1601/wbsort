@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// ParseArgs processes command line arguments and returns configuration
 func ParseArgs(args []string) ([]string, error) {
 	if len(args) == 0 {
 		return readLines(os.Stdin)

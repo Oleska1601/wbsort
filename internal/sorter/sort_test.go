@@ -3,8 +3,9 @@ package sorter_test
 import (
 	"reflect"
 	"testing"
-	"wbsort/internal/parser"
-	"wbsort/internal/sorter"
+
+	"github.com/Oleska1601/wbsort/internal/parser"
+	"github.com/Oleska1601/wbsort/internal/sorter"
 )
 
 // test flag -k

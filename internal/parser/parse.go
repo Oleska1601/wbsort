@@ -4,6 +4,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
+// Flags represents command line options for sorting behavior
 type Flags struct {
 	FlagK      int
 	FlagN      bool
@@ -16,6 +17,7 @@ type Flags struct {
 	InputFiles []string
 }
 
+// Parse reads input data and returns lines for processing
 func Parse() (*Flags, []string) {
 	flags := &Flags{}
 	pflag.IntVarP(&flags.FlagK, "key", "k", 0, "sort by column №N")

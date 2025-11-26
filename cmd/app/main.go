@@ -2,8 +2,9 @@ package main
 
 import (
 	"log"
-	"wbsort/internal/app"
-	"wbsort/internal/parser"
+
+	"github.com/Oleska1601/wbsort/internal/app"
+	"github.com/Oleska1601/wbsort/internal/parser"
 )
 
 func main() {

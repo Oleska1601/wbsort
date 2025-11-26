@@ -5,14 +5,17 @@ import (
 	"sort"
 	"strings"
 	"unicode"
-	"wbsort/internal/parser"
+
+	"github.com/Oleska1601/wbsort/internal/parser"
 )
 
+// Sorter implements sorting functionality with various algorithms
 type Sorter struct {
 	flags *parser.Flags
 	lines []string
 }
 
+// New creates and returns a new Sorter instance
 func New(flags *parser.Flags, lines []string) *Sorter {
 	return &Sorter{
 		flags: flags,
@@ -20,6 +23,7 @@ func New(flags *parser.Flags, lines []string) *Sorter {
 	}
 }
 
+// Sort performs sorting according to configured flags
 func (s *Sorter) Sort() []string {
 	if s.flags.FlagU {
 		s.SetUnique()
@@ -38,6 +42,7 @@ func (s *Sorter) Sort() []string {
 	return s.lines
 }
 
+// IsSorted checks if lines are already in sorted order
 func (s *Sorter) IsSorted() bool {
 	for i := 1; i < len(s.lines); i++ {
 		if !s.Less(i-1, i) {
@@ -48,6 +53,7 @@ func (s *Sorter) IsSorted() bool {
 	return true
 }
 
+// Less reports whether element i should sort before element j
 func (s *Sorter) Less(i, j int) bool {
 	vi := s.lines[i]
 	vj := s.lines[j]
@@ -84,7 +90,7 @@ func (s *Sorter) Less(i, j int) bool {
 
 }
 
-// key u
+// SetUnique removes duplicate lines from the dataset
 func (s *Sorter) SetUnique() {
 	result := make([]string, 0, len(s.lines))
 	m := make(map[string]struct{})

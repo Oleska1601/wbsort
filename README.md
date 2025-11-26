@@ -38,6 +38,11 @@
 
 ### Тестирование
 - тестирование возможно либо через Stdin, либо через файл(ы)
+
+```bash
+make check
+```
+
 ```bash
 # Базовые флаги
 go run ./cmd/app/main.go -k 2 ./testdata/test_k.txt
