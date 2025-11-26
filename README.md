@@ -32,6 +32,27 @@
 
 Код должен проходить все тесты, а также проверки go vet и golint (понимание, что требуются надлежащие комментарии, имена и структура программы).
 
+## Комментарии
+- при указании несовместимых ключей одновременно (-M, -h, -n) сортировка выберется какая-то одна
+- при указании k <= 0 сортировка будет происходить по всей строке
 
-тестировать с нефайлом!!!
-поменять на readstring
+### Тестирование
+- тестирование возможно либо через Stdin, либо через файл(ы)
+```bash
+# Базовые флаги
+go run ./cmd/app/main.go -k 2 -n ./testdata/test1.txt ./testdata/test_k.txt
+go run ./cmd/app/main.go -n ./testdata/test_n.txt
+go run ./cmd/app/main.go -r ./testdata/test_r.txt
+go run ./cmd/app/main.go -u ./testdata/test_u.txt
+
+# Специальные флаги
+go run ./cmd/app/main.go -M ./testdata/test_M.txt
+go run ./cmd/app/main.go -b ./testdata/test_b.txt
+go run ./cmd/app/main.go -c ./testdata/test_c_sorted.txt
+go run ./cmd/app/main.go -h ./testdata/test_h.txt
+
+# Комбинации флагов
+go run ./cmd/app/main.go -unr ./testdata/test_combined.txt
+go run ./cmd/app/main.go -k 2 -h ./testdata/test_complex.txt
+go run ./cmd/app/main.go -k 1 -u ./testdata/test_complex.txt
+```

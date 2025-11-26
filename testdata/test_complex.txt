@@ -1,0 +1,5 @@
+user1	100K	Jan
+user2	2M	Mar
+user3	500	Dec
+user1	100K	Feb
+user4	1G	Jan
