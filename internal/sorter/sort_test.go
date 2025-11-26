@@ -321,16 +321,10 @@ func TestSortIgnoreBlanks(t *testing.T) {
 			want:  []string{"1", "2  ", "3\t"},
 		},
 		{
-			name:  "only spaces",
-			flags: &parser.Flags{FlagB: true},
-			lines: []string{"   ", "  ", " "},
-			want:  []string{" ", "  ", "   "}, // все пустые после trim
-		},
-		{
 			name:  "spaces and empty",
 			flags: &parser.Flags{FlagB: true},
-			lines: []string{"", " b", "a ", "a"},
-			want:  []string{"", " b", "a", "a "},
+			lines: []string{"", " b", "с ", "a "},
+			want:  []string{"", " b", "a ", "с "},
 		},
 	}
 

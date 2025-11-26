@@ -57,8 +57,8 @@ func (s *Sorter) Less(i, j int) bool {
 		vj = strings.TrimRightFunc(vj, unicode.IsSpace)
 	}
 
-	vi = getSortKey(s.lines[i], s.flags.FlagK)
-	vj = getSortKey(s.lines[j], s.flags.FlagK)
+	vi = getSortKey(vi, s.flags.FlagK)
+	vj = getSortKey(vj, s.flags.FlagK)
 
 	// Выбираем стратегию сравнения
 	var less bool

@@ -40,7 +40,7 @@
 - тестирование возможно либо через Stdin, либо через файл(ы)
 ```bash
 # Базовые флаги
-go run ./cmd/app/main.go -k 2 -n ./testdata/test1.txt ./testdata/test_k.txt
+go run ./cmd/app/main.go -k 2 ./testdata/test_k.txt
 go run ./cmd/app/main.go -n ./testdata/test_n.txt
 go run ./cmd/app/main.go -r ./testdata/test_r.txt
 go run ./cmd/app/main.go -u ./testdata/test_u.txt
